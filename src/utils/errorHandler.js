@@ -1,13 +1,21 @@
-export class ErrorHandler {
-  static handleDivisionByZero() {
-    throw new Error('Divisão por zero não é permitida');
+import console from 'console';
+
+class ErrorHandler {
+  logError(error) {
+    console.error(error);
   }
 
-  static handleInvalidInput(input) {
-    throw new Error(`Entrada inválida: ${input}`);
+  throwError(message) {
+    if (typeof message !== 'string') {
+      throw new Error('Error message must be a string');
+    }
+    throw new Error(message);
   }
 
-  static handleUnknownError(error) {
-    throw new Error(`Erro desconhecido: ${error.message}`);
+  handleUncaughtError(error) {
+    this.logError(error);
+    this.throwError(error.message);
   }
 }
+
+export default ErrorHandler;
