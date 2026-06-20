@@ -1,5 +1,5 @@
 import React from 'react';
-import { ErrorHandler } from '../utils/errorHandler';
+import errorHandler from '../utils/errorHandler';
 import { add, subtract, multiply, divide, isEven, isOdd, round, sqrt } from '../utils/math';
 import Display from '../components/Display';
 import Buttons from '../components/Buttons';
@@ -23,8 +23,8 @@ class Calculator extends React.Component {
         this.setState({ secondNumber: this.state.secondNumber * 10 + value });
       }
     } catch (error) {
-      ErrorHandler.logError(error);
-      ErrorHandler.throwError('Error handling number click');
+      errorHandler.logError(error);
+      errorHandler.throwError('Error handling number click');
     }
   };
 
@@ -40,8 +40,8 @@ class Calculator extends React.Component {
         this.setState({ secondNumber: 0 });
       }
     } catch (error) {
-      ErrorHandler.logError(error);
-      ErrorHandler.throwError('Error handling operation click');
+      errorHandler.logError(error);
+      errorHandler.throwError('Error handling operation click');
     }
   };
 
