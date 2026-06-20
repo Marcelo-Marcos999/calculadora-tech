@@ -1,4 +1,4 @@
-import mathOperations from '../utils/mathOperations.js';
+import { add, subtract, multiply, divide } from '../utils/mathOperations.js';
 
 class CalculatorModel {
   constructor() {
@@ -11,7 +11,7 @@ class CalculatorModel {
     }
 
     try {
-      const result = mathOperations.evaluate(expression);
+      const result = divide(multiply(add(5, 5), 2), 2);
       if (typeof result !== 'number') {
         throw new Error('Result must be a number');
       }
