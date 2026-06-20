@@ -39,7 +39,7 @@ const Calculator = () => {
         <CalculatorButton label="7" onClick={() => handleDigitClick('7')} />
         <CalculatorButton label="8" onClick={() => handleDigitClick('8')} />
         <CalculatorButton label="9" onClick={() => handleDigitClick('9')} />
-        <CalculatorButton label="/" onClick={() => handleOperatorClick('/')} />
+        <CalculatorButton label="/" onClick={() => handleOperatorClick('/') } />
         <CalculatorButton label="4" onClick={() => handleDigitClick('4')} />
         <CalculatorButton label="5" onClick={() => handleDigitClick('5')} />
         <CalculatorButton label="6" onClick={() => handleDigitClick('6')} />
@@ -51,7 +51,7 @@ const Calculator = () => {
         <CalculatorButton label="0" onClick={() => handleDigitClick('0')} />
         <CalculatorButton label="." onClick={() => handleDigitClick('.')} />
         <CalculatorButton label="=" onClick={handleCalculateClick} />
-        <CalculatorButton label "+" onClick={() => handleOperatorClick('+')} />
+        <CalculatorButton label="+" onClick={() => handleOperatorClick('+')} />
         <CalculatorButton label="C" onClick={handleClearClick} />
       </div>
       <CalculatorDisplay value={result} />
