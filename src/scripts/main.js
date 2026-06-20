@@ -23,7 +23,8 @@ class Calculator extends React.Component {
         this.setState({ secondNumber: this.state.secondNumber * 10 + value });
       }
     } catch (error) {
-      ErrorHandler.handleUnknownError(error);
+      ErrorHandler.logError(error);
+      ErrorHandler.throwError('Error handling number click');
     }
   };
 
@@ -39,7 +40,8 @@ class Calculator extends React.Component {
         this.setState({ secondNumber: 0 });
       }
     } catch (error) {
-      ErrorHandler.handleUnknownError(error);
+      ErrorHandler.logError(error);
+      ErrorHandler.throwError('Error handling operation click');
     }
   };
 
