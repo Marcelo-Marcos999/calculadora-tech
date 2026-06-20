@@ -1,5 +1,5 @@
 import React from 'react';
-import { ErrorHandler } from '../utils/errorHandler';
+import errorHandler from '../utils/errorHandler';
 import { divide, isEven, isOdd } from '../utils/math';
 
 const Buttons = () => {
@@ -13,7 +13,7 @@ const Buttons = () => {
         console.log('Número inválido');
       }
     } catch (error) {
-      ErrorHandler.handleUnknownError(error);
+      errorHandler.handleUncaughtError(error);
     }
   };
 
