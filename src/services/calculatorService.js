@@ -17,6 +17,18 @@ class CalculatorService {
     }
   }
 
+  /**
+   * Avalia a expressão sem lançar/logar erros — usado para o preview ao vivo.
+   * Retorna `null` quando a expressão ainda é inválida/incompleta.
+   */
+  preview(expression) {
+    try {
+      return this.model.calculate(expression);
+    } catch {
+      return null;
+    }
+  }
+
   addHistory(item) {
     try {
       this.model.addHistory(item);
@@ -29,6 +41,15 @@ class CalculatorService {
   getHistory() {
     try {
       return this.model.getHistory();
+    } catch (error) {
+      this.errorHandler.logError(error);
+      throw this.errorHandler.throwError(error.message);
+    }
+  }
+
+  clearHistory() {
+    try {
+      this.model.clearHistory();
     } catch (error) {
       this.errorHandler.logError(error);
       throw this.errorHandler.throwError(error.message);

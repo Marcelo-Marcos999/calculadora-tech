@@ -1,5 +1,3 @@
-import console from 'console';
-
 class ErrorHandler {
   logError(error) {
     console.error(error);
