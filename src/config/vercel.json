@@ -6,7 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "buildCommand": "npm run build",
-        "outputDirectory": "build"
+        "outputDirectory": "dist"
       }
     }
   ],
@@ -15,8 +15,5 @@
       "src": "/",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "https://api.example.com"
-  }
+  ]
 }
